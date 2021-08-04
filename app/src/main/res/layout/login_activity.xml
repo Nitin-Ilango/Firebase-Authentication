@@ -33,7 +33,7 @@
         android:id="@+id/et_password_l"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="0dp"
         android:hint="Password"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="@color/purple_200"

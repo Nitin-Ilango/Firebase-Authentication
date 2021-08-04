@@ -32,6 +32,7 @@ class SignupActivity : AppCompatActivity() {
         setContentView(view)
 
         auth = FirebaseAuth.getInstance()
+//        auth.firebaseAuthSettings.setAppVerificationDisabledForTesting(true)
 
         mCallbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
