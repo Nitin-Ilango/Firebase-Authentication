@@ -21,15 +21,13 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: LoginActivityBinding
     private val requestCodeSignIn = 100
-//    private lateinit var database: DatabaseReference
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = LoginActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //common for email and google sign in
+        //common for all logins
         auth = FirebaseAuth.getInstance()
 
         binding.btnLogin.setOnClickListener{

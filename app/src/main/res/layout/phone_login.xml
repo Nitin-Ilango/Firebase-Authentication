@@ -8,45 +8,43 @@
     tools:context="com.nitin.firebasebasics.SignupActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/et_email_su"
+        android:id="@+id/til_phone"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="180dp"
-        android:inputType="textEmailAddress"
-        android:hint="E-mail"
+        android:layout_marginTop="150dp"
         android:background="@drawable/round_textbox"
+        android:inputType="text"
         android:textColorHint="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_email"
+            android:id="@+id/et_phone_number"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="textEmailAddress"
-            android:textSize="20sp"
             android:background="@drawable/round_textbox"
-            />
+            android:inputType="textPhonetic"
+            android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/et_password_su"
+        android:id="@+id/til_otp"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="32dp"
-        android:hint="Password"
+        android:hint="OTP"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="@color/purple_200"
         android:textColorHint="@color/purple_200"
         android:background="@drawable/round_textbox"
-        app:layout_constraintEnd_toEndOf="@+id/et_email_su"
-        app:layout_constraintStart_toStartOf="@+id/et_email_su"
-        app:layout_constraintTop_toBottomOf="@+id/et_email_su" >
+        app:layout_constraintEnd_toEndOf="@+id/til_phone"
+        app:layout_constraintStart_toStartOf="@+id/til_phone"
+        app:layout_constraintTop_toBottomOf="@+id/til_phone" >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_password"
+            android:id="@+id/et_otp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="numberPassword"
@@ -55,42 +53,19 @@
             />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/et_confirm_password_su"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="32dp"
-        android:hint="Re-enter Password"
-        android:textColorHint="@color/purple_200"
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@color/purple_200"
-        app:layout_constraintEnd_toEndOf="@+id/et_password_su"
-        app:layout_constraintHorizontal_bias="0.572"
-        app:layout_constraintStart_toStartOf="@+id/et_password_su"
-        app:layout_constraintTop_toBottomOf="@+id/et_password_su" >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_confirm_password"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="numberPassword"
-            android:textSize="20sp"
-            android:background="@drawable/round_textbox"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_signup"
+        android:id="@+id/btn_otp"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
-        android:paddingHorizontal="15dp"
-        android:text="Sign-up"
-        android:textStyle="bold"
-        android:textColor="@color/white"
         android:background="@drawable/round_button"
-        app:layout_constraintEnd_toEndOf="@+id/et_confirm_password_su"
-        app:layout_constraintStart_toStartOf="@+id/et_confirm_password_su"
-        app:layout_constraintTop_toBottomOf="@+id/et_confirm_password_su" />
+        android:paddingHorizontal="15dp"
+        android:text="send OTP"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/til_otp"
+        app:layout_constraintStart_toStartOf="@+id/til_otp"
+        app:layout_constraintTop_toBottomOf="@+id/til_otp" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_go_to_login"
@@ -103,8 +78,35 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="@+id/btn_signup"
-        app:layout_constraintStart_toStartOf="@+id/btn_signup"
-        app:layout_constraintTop_toBottomOf="@+id/btn_signup" />
+        app:layout_constraintEnd_toEndOf="@+id/btn_otp"
+        app:layout_constraintStart_toStartOf="@+id/btn_otp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_otp" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_otp_enter"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round_button"
+        android:paddingHorizontal="15dp"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tv_go_to_login"
+        app:layout_constraintStart_toStartOf="@+id/tv_go_to_login"
+        app:layout_constraintTop_toBottomOf="@+id/tv_go_to_login" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_resend_otp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_button"
+        android:paddingHorizontal="15dp"
+        android:layout_marginTop="32dp"
+        android:text="resend otp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btn_otp_enter"
+        app:layout_constraintStart_toStartOf="@+id/btn_otp_enter"
+        app:layout_constraintTop_toBottomOf="@+id/btn_otp_enter" />
 </androidx.constraintlayout.widget.ConstraintLayout>
